@@ -23,7 +23,19 @@ Quantes targetes estan actives?
 
 # Sprint 4 - Nivel 3
 
-Crea una taula amb la qual puguem unir les dades del nou arxiu products.csv amb la base de dades creada, tenint en compte que des de transaction tens product_ids. Genera la següent consulta: 
+Crea una taula amb la qual puguem unir les dades del nou arxiu products.csv amb la base de dades creada, tenint en compte que des de transaction tens _**product_ids**_. Genera la següent consulta: 
 
-Exercici 1
+## Exercici 1
+
 Necessitem conèixer el nombre de vegades que s'ha venut cada producte.
+
+![](files_s4/S4N3E1.png)
+
+
+| Componente         |Descripción                                                                             |
+|--------------------|----------------------------------------------------------------------------------------|
+| `SUBSTRING_INDEX()`| Divide la cadena de **product_id** basada en el índice.                                |
+| `CAST()`           | La utilizo para para convertir el resultado en un entero sin igno.                     |
+| `WHERE`            | Asegurar que solo se seleccionen productos que estén dentro de la lista de productos   |
+| `CROSS JOIN`       | Genera identificadores de la tabla `products` y combinarla con la tabla `transactions` |
+
